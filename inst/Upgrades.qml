@@ -452,7 +452,6 @@ Upgrades
 			from:	"disableSampleSave"
 			to:		"samplesSavingDisabled"
 		}
-
 	}
 
 	Upgrade
@@ -739,6 +738,21 @@ Upgrades
 			from:	"pointEst"
 			to:		"pointEstimate"
 		}
+	}
 
+	Upgrade
+	{
+		// applies to files saved with fromVersion OR LOWER (Desktop picks the closest
+		// step at or above the file's version), so fromVersion must be the LAST released
+		// version that still had the old option names, not the first
+		functionName: "raterAgreement"
+		fromVersion:  "0.96.4"
+		toVersion:    "0.97.1"
+
+		ChangeRename
+		{
+			from: "krippendorffsAlphaBootstrapSamplesForCI"
+			to:   "bootstrapSamples"
+		}
 	}
 }
